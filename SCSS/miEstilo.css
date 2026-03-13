@@ -1,0 +1,40 @@
+:root {
+  --tamanoMemoria: 30%;
+}
+
+.memoria {
+  background-color: grey;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+  width: var(--tamanoMemoria);
+}
+.memoria .particion {
+  background-color: aqua;
+  border: 2px solid blue;
+  width: 100%;
+  border-radius: 5px;
+}
+.memoria .tam1 {
+  height: 3rem;
+  position: relative;
+}
+.memoria .tam1::after {
+  content: "1MB";
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+}
+.memoria .tam2 {
+  height: 6rem;
+  position: relative;
+}
+.memoria .tam2::after {
+  content: "2MB";
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+}/*# sourceMappingURL=miEstilo.css.map */

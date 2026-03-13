@@ -1,0 +1,8 @@
+.particion {
+  background-color: aqua;
+  border: 2px solid blue;
+  width: 100%;
+}
+.particion .tam1 {
+  height: 3rem;
+}/*# sourceMappingURL=particion.css.map */
