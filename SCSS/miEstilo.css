@@ -1,5 +1,5 @@
 :root {
-  --tamanoMemoria: 30%;
+  --size_memory: 30%;
 }
 
 .memoria {
@@ -10,7 +10,7 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 0.5rem;
-  width: var(--tamanoMemoria);
+  width: var(--size_memory);
 }
 .memoria .particion {
   background-color: aqua;
@@ -37,4 +37,35 @@
   position: absolute;
   right: 0.2rem;
   top: 0.2rem;
-}/*# sourceMappingURL=miEstilo.css.map */
+}
+.memoria .tam3 {
+  height: 9rem;
+  position: relative;
+}
+.memoria .tam3::after {
+  content: "3MB";
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+}
+.memoria .tam4 {
+  height: 12rem;
+  position: relative;
+}
+.memoria .tam4::after {
+  content: "4MB";
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+}
+.memoria .tam5 {
+  height: 15rem;
+  position: relative;
+}
+.memoria .tam5::after {
+  content: "5MB";
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+}
+/*# sourceMappingURL=miEstilo.css.map */

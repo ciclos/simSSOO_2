@@ -1,3 +1,5 @@
+@use "variables" as *; // Importa variables del partial para usarlas aqui.
+
 .memoria {
     background-color: grey;
     padding: 1rem;
@@ -13,30 +15,23 @@
         border: 2px solid blue;
         width: 100%;
         border-radius: 5px;
+        position: relative; // Para que el absolute tenga este elemento como referencia.
 
-    }
-
-    .tam1 {
-        height: 3rem;
-        position: relative;
-        &::after{
-            content: "1MB";
+        &::after { //Genera el texto en funcion del nombre de la clase 
             position: absolute;
-            right: 0.2rem;
+            right: 0.2rem; //posiciona el texto arriba a la derecha.
             top: 0.2rem;
-            
         }
     }
 
-    .tam2 {
-        height: 6rem;
-        position: relative;
-        &::after{
-            content: "2MB";
-            position: absolute;
-            right: 0.2rem;
-            top: 0.2rem;
-            
+    // Bucle for para generar tam1..tam5 sin repetir codigo.
+    @for $i from 1 through $maxTamanos {
+        .tam#{$i} {
+            height: #{$i * 3}rem; // Cada tam aumenta 3rem (tam1=3rem, tam2=6rem...).
+        }
+
+        .tam#{$i}::after {
+            content: "#{$i}MB"; // Genera el texto segun la clase: 1MB, 2MB, 3MB...
         }
     }
 }
