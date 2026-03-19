@@ -24,14 +24,14 @@
         }
     }
 
-    // Bucle for para generar tam1..tam5 sin repetir codigo.
-    @for $i from 1 through $maxTamanos {
-        .tam#{$i} {
-            height: #{$i * 3}rem; // Cada tam aumenta 3rem (tam1=3rem, tam2=6rem...).
+    // Bucle each con mapa Sass para generar tam1..tam5 sin repetir codigo.
+    @each $nombre, $valor in $tamanos {
+        .#{$nombre} {
+            height: #{$valor * 3}rem; // Cada tam aumenta 3rem (tam1=3rem, tam2=6rem...).
         }
 
-        .tam#{$i}::after {
-            content: "#{$i}MB"; // Genera el texto segun la clase: 1MB, 2MB, 3MB...
+        .#{$nombre}::after {
+            content: "#{$valor}MB"; // Genera el texto segun la clase: 1MB, 2MB, 3MB...
         }
     }
 }
