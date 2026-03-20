@@ -2,121 +2,95 @@
   --tamanoMemoria: 30%;
 }
 
-.memoria {
-  background-color: grey;
-  padding: 1rem;
-  border: 2px solid black;
-  border-radius: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 0.5rem;
+h1 {
+  text-align: center;
+}
+
+.panel-memoria {
   width: var(--tamanoMemoria);
+  margin-left: auto;
+}
+.panel-memoria h2 {
+  text-align: left;
+}
+
+.memoria {
+  background-color: #b3b3b3;
+  padding: 0.5rem;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: var(--tamanoMemoria);
+  min-height: 30rem;
+  position: relative;
 }
 .memoria .particion {
   background-color: aqua;
   border: 2px solid blue;
   width: 100%;
-  border-radius: 5px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .memoria .particion::after {
   position: absolute;
-  right: 0.2rem;
-  top: 0.2rem;
-}
-.memoria .tam1 {
-  height: 3rem;
-}
-.memoria .tam1::after {
-  content: "1MB";
-}
-.memoria .tam2 {
-  height: 6rem;
-}
-.memoria .tam2::after {
-  content: "2MB";
-}
-.memoria .tam3 {
-  height: 9rem;
-}
-.memoria .tam3::after {
-  content: "3MB";
-}
-.memoria .tam4 {
-  height: 12rem;
-}
-.memoria .tam4::after {
-  content: "4MB";
-}
-.memoria .tam5 {
-  height: 15rem;
-}
-.memoria .tam5::after {
-  content: "5MB";
-}
-
-.procesos {
-  width: var(--tamanoMemoria);
-  padding: 1rem;
-  border: 2px solid black;
-  border-radius: 10px;
+  left: 100%;
+  margin-left: 0.5rem;
+  width: 3rem;
+  height: 100%;
+  background: white;
+  border: 1px solid black;
   display: flex;
-  flex-wrap: wrap;
-  row-gap: 0.5rem;
-  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: black;
 }
-
-.proceso {
-  background-color: aqua;
-  border: 2px solid blue;
-  width: 100%;
-  border-radius: 5px;
-  position: relative;
-  margin-bottom: 0.2rem;
-  padding: 0.2rem;
-}
-.proceso::after {
-  position: absolute;
-  right: 0.2rem;
-  top: 0.2rem;
-}
-
-.proceso.tam1 {
+.memoria .particion.tam1 {
   height: 3rem;
 }
-
-.proceso.tam1::after {
+.memoria .particion.tam1::after {
   content: "1MB";
 }
-
-.proceso.tam2 {
+.memoria .particion.tam2 {
   height: 6rem;
 }
-
-.proceso.tam2::after {
+.memoria .particion.tam2::after {
   content: "2MB";
 }
-
-.proceso.tam3 {
+.memoria .particion.tam3 {
   height: 9rem;
 }
-
-.proceso.tam3::after {
+.memoria .particion.tam3::after {
   content: "3MB";
 }
-
-.proceso.tam4 {
+.memoria .particion.tam4 {
   height: 12rem;
 }
-
-.proceso.tam4::after {
+.memoria .particion.tam4::after {
   content: "4MB";
 }
-
-.proceso.tam5 {
+.memoria .particion.tam5 {
   height: 15rem;
 }
-
-.proceso.tam5::after {
+.memoria .particion.tam5::after {
   content: "5MB";
+}
+.memoria .ocupada .tam-interno {
+  position: absolute;
+  right: 0.3rem;
+  top: 0.2rem;
+  font-size: 0.75rem;
+}
+.memoria .ocupada .nombre-proceso {
+  font-weight: 700;
+}
+
+.btn-anadir {
+  align-self: center;
+  width: 2rem;
+  height: 2rem;
+  margin-top: auto;
 }/*# sourceMappingURL=miEstilo.css.map */

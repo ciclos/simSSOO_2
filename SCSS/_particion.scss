@@ -1,37 +1,61 @@
-@use "variables" as *; // Importa variables del partial para usarlas aqui.
+@use "variables" as *;
 
 .memoria {
-    background-color: grey;
-    padding: 1rem;
+    background-color: #b3b3b3; 
+    padding: 0.5rem;
     border: 2px solid black;
-    border-radius: 10px;
     display: flex;
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-    width: var(--tamanoMemoria);
+    flex-direction: column; //apila las particiones verticalmente
+    gap: 0.5rem; 
+    width: var(--tamanoMemoria); 
+    min-height: 30rem;
+    position: relative;
 
     .particion {
         background-color: aqua;
         border: 2px solid blue;
         width: 100%;
-        border-radius: 5px;
-        position: relative; // Para que el absolute tenga este elemento como referencia.
+        position: relative; // Para que el ::after no salga volando
+        display: flex; 
+        align-items: center;
+        justify-content: center;
 
-        &::after { //Genera el texto en funcion del nombre de la clase 
+        // Cuadrito lateral
+        &::after { // Pseudo-elemento para mostrar el tamaño en MB
             position: absolute;
-            right: 0.2rem; //posiciona el texto arriba a la derecha.
-            top: 0.2rem;
+            left: 100%;           // Justo al terminar la partición
+            margin-left: 0.5rem;  // Separación mínima
+            width: 3rem; 
+            height: 100%;
+            background: white;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem; 
+            color: black;
+        }
+        // Generamos las clases para cada tamaño de partición
+        @each $nombre, $valor in $tamanos {
+            &.#{$nombre} {
+                height: #{$valor * 3}rem;
+                &::after {
+                    content: "#{$valor}MB";
+                }
+            }
         }
     }
 
-    // Bucle each con mapa Sass para generar tam1..tam5 sin repetir codigo.
-    @each $nombre, $valor in $tamanos {
-        .#{$nombre} {
-            height: #{$valor * 3}rem; // Cada tam aumenta 3rem (tam1=3rem, tam2=6rem...).
+    .ocupada { // Clase para las particiones ocupadas por procesos
+        .tam-interno {
+            position: absolute;
+            right: 0.3rem;
+            top: 0.2rem;
+            font-size: 0.75rem;
         }
 
-        .#{$nombre}::after {
-            content: "#{$valor}MB"; // Genera el texto segun la clase: 1MB, 2MB, 3MB...
+        .nombre-proceso { // Nombre del proceso dentro de la partición
+            font-weight: 700;
         }
     }
 }

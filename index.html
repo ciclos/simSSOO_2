@@ -7,17 +7,30 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="procesos"> <!-- Contenedor de procesos. -->
-      <div class="proceso tam1">Word</div>
-      <div class="proceso tam2">Chrome</div>
-      <div class="proceso tam2">Excell</div>
-      <div class="proceso tam3">Krita</div>
-    </div>
+    <h1>Esquema de particiones fijas</h1>
+    
+    <section class="panel-memoria"> <!-- Añadimos section para facilitar la distribucion -->
+      <h2>Memoria principal</h2>
+      <div class="memoria">
 
-    <div class="memoria">
-      <div class="particion tam1"></div>
-      <div class="particion tam1"></div>
-      <div class="particion tam2"></div>
-    </div>
-  </body>
+        <div class="particion tam1" data-tam="1"></div> <!-- añado data-tam para preparar la estructura
+                                                        ya que mas adelante nos hara falta segun pautas de la practica-->
+        
+        <div class="particion tam2 ocupada" data-tam="2">
+          <span class="tam-interno">1,5MB</span>
+          <span class="nombre-proceso">VSCode</span>
+        </div>
+
+        <div class="particion tam2 ocupada" data-tam="2"> <!-- ocupada se ha creado para diferenciar las partciones ocupadas de las vacias,
+                                                          para luego cambiarle el borde sin romper el resto.-->
+          <span class="tam-interno">2,5MB</span>
+          <span class="nombre-proceso">Calculadora</span> <!-- span para separar el nombre y los megas en etiquetas separadas-->
+        </div>
+
+        <div class="particion tam1" data-tam="1"></div>
+
+        <button class="btn-anadir" type="button">+</button>
+      </div>
+    </section>
+</body>
 </html>

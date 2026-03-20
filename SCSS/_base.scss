@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+}
+
+.panel-memoria {
+    width: var(--tamanoMemoria);
+    margin-left: auto; // Empuja el panel hacia la derecha
+
+    h2 {
+        text-align: left;
+    }
+}
