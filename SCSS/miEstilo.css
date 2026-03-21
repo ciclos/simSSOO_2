@@ -85,6 +85,12 @@ h1 {
 .memoria .particion.tam5::after {
   content: "5MB";
 }
+.memoria .particion .particion {
+  border: 2px solid red;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
 .memoria .ocupada .tam-interno {
   position: absolute;
   right: 0.3rem;

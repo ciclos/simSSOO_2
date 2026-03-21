@@ -35,6 +35,7 @@
             font-size: 0.8rem; 
             color: black;
         }
+
         // Generamos las clases para cada tamaño de partición
         @each $nombre, $valor in $tamanos {
             &.#{$nombre} {
@@ -43,6 +44,14 @@
                     content: "#{$valor}MB";
                 }
             }
+        }
+
+        // Ajuste para el Drag and Drop
+        .particion {
+            border:2px solid red; // Borde rojo para indicar que es una partición ocupada
+            position: absolute; // Se superponga
+            height: 100%;  
+            width: 100%;
         }
     }
 
