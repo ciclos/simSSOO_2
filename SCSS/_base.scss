@@ -10,3 +10,10 @@ h1 {
         text-align: left;
     }
 }
+
+.contenedor-principal {
+    display: flex;
+    justify-content: center; //  centra horizontalmente
+    align-items: flex-start; //alineamos al inicio del contenedor para que no se centre verticalmente
+    padding: 2rem; 
+}

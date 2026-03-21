@@ -8,29 +8,53 @@
   </head>
   <body>
     <h1>Esquema de particiones fijas</h1>
-    
-    <section class="panel-memoria"> <!-- Añadimos section para facilitar la distribucion -->
-      <h2>Memoria principal</h2>
-      <div class="memoria">
 
-        <div class="particion tam1" data-tam="1"></div> <!-- añado data-tam para preparar la estructura
-                                                        ya que mas adelante nos hara falta segun pautas de la practica-->
-        
-        <div class="particion tam2 ocupada" data-tam="2">
-          <span class="tam-interno">1,5MB</span>
-          <span class="nombre-proceso">VSCode</span>
+    <div class="contenedor-principal">  <!-- Añadimos un contenedor para facilitar la distribucion --> 
+
+      <section class="panel-procesos">
+        <h2>Procesos preparados</h2>
+        <div class="memoria lista-espera">
+          <div class="particion tam1 word ocupada" data-tam="1"> 
+            <span class="dir-mem top">0</span> <!-- añadimos span para las direcciones de memoria, top arriba bottom abajo -->
+            <span class="tam-interno">1,5MB</span>
+            <span class="nombre-proceso">Word</span>
+            <span class="dir-mem bottom">1250</span> 
+          </div>
+
+          <div class="particion tam2 chrome ocupada" data-tam="2">
+            <span class="dir-mem top">0</span>
+            <span class="tam-interno">2,5MB</span>
+            <span class="nombre-proceso">Chrome</span>
+            <span class="dir-mem bottom">2650</span>
+          </div>
+
+          <button class="btn-anadir" type="button">+</button>
         </div>
+      </section>
 
-        <div class="particion tam2 ocupada" data-tam="2"> <!-- ocupada se ha creado para diferenciar las partciones ocupadas de las vacias,
-                                                          para luego cambiarle el borde sin romper el resto.-->
-          <span class="tam-interno">2,5MB</span>
-          <span class="nombre-proceso">Calculadora</span> <!-- span para separar el nombre y los megas en etiquetas separadas-->
+      <section class="panel-memoria">
+        <!-- Añadimos section para facilitar la distribucion -->
+        <h2>Memoria principal</h2>
+        <div class="memoria">
+          <div class="particion tam1" data-tam="1"></div>
+          <!-- añado data-tam para preparar la estructura ya que mas adelante nos hara falta segun pautas de la practica-->
+
+          <div class="particion tam2 ocupada" data-tam="2">
+            <span class="tam-interno">1,5MB</span>
+            <span class="nombre-proceso">VSCode</span>
+          </div>
+
+          <div class="particion tam2 ocupada" data-tam="">
+            <!-- ocupada se ha creado para diferenciar las partciones ocupadas de las vacias,para luego cambiarle el borde sin romper el resto.-->
+            <span class="tam-interno">2,5MB</span>
+            <span class="nombre-proceso">Calculadora</span>
+            <!-- span para separar el nombre y los megas en etiquetas separadas-->
+          </div>
+
+          <div class="particion tam1" data-tam="1"></div>
+          <button class="btn-anadir" type="button">+</button>
         </div>
-
-        <div class="particion tam1" data-tam="1"></div>
-
-        <button class="btn-anadir" type="button">+</button>
-      </div>
-    </section>
-</body>
+      </section>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,25 @@
+.panel-procesos {
+    width: var(--tamanoMemoria); // usamos la variable declarada
+
+    .lista-espera {
+        border-style: dashed; // Borde punteado
+        background-color: transparent; 
+        
+        // En el panel de la izquierda no queremos el cuadrito blanco lateral (::after) asique lo ocultamos
+        .particion::after { display: none; } 
+    }
+}
+
+.word   { background-color: #add8e6 !important; } // important para que tenga prioridad sobre el color de las particiones
+.chrome { background-color: #90ee90 !important; }
+
+// Estilo para las direcciones
+.dir-mem {
+    position: absolute;
+    left: 0.2rem; 
+    font-size: 0.5rem; //tamaño del numero
+    font-weight: normal;
+
+    &.top { top: 0.2rem; }    // posicionamientos y tamaños de las direcciones de memoria
+    &.bottom { bottom: 0.2rem; } 
+}

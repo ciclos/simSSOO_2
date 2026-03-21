@@ -9,7 +9,7 @@
     gap: 0.5rem; 
     width: var(--tamanoMemoria); 
     min-height: 30rem;
-    position: relative;
+    position: relative; // Usamos position relative para que los elementos hijos puedan posicionarse respecto a este contenedor
 
     .particion {
         background-color: aqua;
@@ -17,16 +17,16 @@
         width: 100%;
         position: relative; // Para que el ::after no salga volando
         display: flex; 
-        align-items: center;
+        align-items: center;     //reglas para centrar el texto
         justify-content: center;
 
         // Cuadrito lateral
         &::after { // Pseudo-elemento para mostrar el tamaño en MB
             position: absolute;
-            left: 100%;           // Justo al terminar la partición
+            left: 100%;           // Para colocar justo al terminar la partición
             margin-left: 0.5rem;  // Separación mínima
-            width: 3rem; 
-            height: 100%;
+            width: 3rem;        
+            height: 100%; 
             background: white;
             border: 1px solid black;
             display: flex;

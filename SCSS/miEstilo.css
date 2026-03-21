@@ -14,6 +14,13 @@ h1 {
   text-align: left;
 }
 
+.contenedor-principal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
 .memoria {
   background-color: #b3b3b3;
   padding: 0.5rem;
@@ -86,6 +93,38 @@ h1 {
 }
 .memoria .ocupada .nombre-proceso {
   font-weight: 700;
+}
+
+.panel-procesos {
+  width: var(--tamanoMemoria);
+}
+.panel-procesos .lista-espera {
+  border-style: dashed;
+  background-color: transparent;
+}
+.panel-procesos .lista-espera .particion::after {
+  display: none;
+}
+
+.word {
+  background-color: #add8e6 !important;
+}
+
+.chrome {
+  background-color: #90ee90 !important;
+}
+
+.dir-mem {
+  position: absolute;
+  left: 0.2rem;
+  font-size: 0.5rem;
+  font-weight: normal;
+}
+.dir-mem.top {
+  top: 0.2rem;
+}
+.dir-mem.bottom {
+  bottom: 0.2rem;
 }
 
 .btn-anadir {
