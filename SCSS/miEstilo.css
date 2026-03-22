@@ -85,20 +85,20 @@ h1 {
 .memoria .particion.tam5::after {
   content: "5MB";
 }
-.memoria .particion .particion {
-  border: 2px solid red;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-.memoria .ocupada .tam-interno {
+.memoria .particion .tam-interno {
   position: absolute;
   right: 0.3rem;
   top: 0.2rem;
   font-size: 0.75rem;
 }
-.memoria .ocupada .nombre-proceso {
+.memoria .particion .nombre-proceso {
   font-weight: 700;
+}
+.memoria .particion .particion {
+  border: 2px solid red;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .panel-procesos {
@@ -120,6 +120,14 @@ h1 {
   background-color: #90ee90 !important;
 }
 
+.vscode {
+  background-color: #4dd0e1 !important;
+}
+
+.calculadora {
+  background-color: #fff176 !important;
+}
+
 .dir-mem {
   position: absolute;
   left: 0.2rem;
@@ -138,4 +146,20 @@ h1 {
   width: 2rem;
   height: 2rem;
   margin-top: auto;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  background-color: #ff9800;
+  color: white;
+  padding: 5px;
+  position: absolute;
+  left: 105%;
+  width: 120px;
+  z-index: 1;
+  border: 1px solid black;
+}
+
+.particion:hover .tooltiptext {
+  visibility: visible;
 }/*# sourceMappingURL=miEstilo.css.map */

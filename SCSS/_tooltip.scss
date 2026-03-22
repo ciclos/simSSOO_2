@@ -1,0 +1,16 @@
+.tooltiptext {
+    visibility: hidden;    // Oculto por defecto
+    background-color: #ff9800; 
+    color: white;
+    padding: 5px;
+    position: absolute; 
+    left: 105%;            // pegado al borde derecho al igual que hicimos para el cuadrito blanco 
+    width: 120px;
+    z-index: 1; // regla que nos permite que el tooltip se muestre por encima de otro elemento
+    border: 1px solid black;
+}
+
+// Solo se ve cuando el raton esta encima de la particion 
+.particion:hover .tooltiptext {
+    visibility: visible;
+}

@@ -1,9 +1,7 @@
-//Reaprovechamos el codigo del profesor adaptando solo lo necesario a nuestro proyecto.
-
 // Selección de elementos adaptada al proyecto
 var particiones = document.querySelectorAll(".panel-memoria .particion");
 var procesos = document.querySelectorAll(".panel-procesos .particion");
-    
+
 hacerDropable(particiones);
 hacerDragable(procesos);
 
@@ -23,8 +21,8 @@ function hacerDropable(listaElementos){
         elemento.ondrop = function(event) {
             event.preventDefault();
 
-            // añadimos esto para evitar que si la particion esta ocupada salga de la funcion.
-            if (this.children.length > 0){
+            // lo cambiamos a .querySelector .particion para evitar que cuente los tooltip
+            if (this.querySelector(".particion")){
                 return;
             }
 
@@ -36,7 +34,6 @@ function hacerDropable(listaElementos){
         }
     });
 }
-
 /* * Hace arrastrables a todos los elementos de la lista. 
  * Al arrastrar un elemento se guarda su id.
  */
@@ -50,3 +47,29 @@ function hacerDragable(listaElementos){
             };
     });
 }
+
+// Seleccionamos todas las particiones de la memoria
+const particionesMemoria = document.querySelectorAll(".panel-memoria .particion");
+
+particionesMemoria.forEach(particion => {
+    // Escuchamos cuando el raton entra en la particion con Mouseover
+    particion.addEventListener("mouseover", function() {
+        
+        // Obtenemos el tamaño total de la particion de (data-tam)
+        let tamTotal = parseFloat(this.getAttribute("data-tam"));
+        
+        // buscamos si hay un proceso dentro (usando el selector que arreglamos antes)
+        let proceso = this.querySelector(".particion");
+        
+        let disponible = tamTotal; // si la particion esta vacia el total del tamaño es el disponible que tenga asignada
+
+        // calculo de memoria disponible
+        if (proceso) {
+            let tamProceso = parseFloat(proceso.getAttribute("data-tam"));
+            disponible = tamTotal - tamProceso;
+        }
+
+        // escribimos el texto del tooltip con el espacio disponible
+        this.querySelector(".tooltiptext").innerText = "Disponible: " + disponible + " MB";
+    });
+});

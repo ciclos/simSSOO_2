@@ -45,18 +45,8 @@
                 }
             }
         }
-
-        // Ajuste para el Drag and Drop
-        .particion {
-            border:2px solid red; // Borde rojo para indicar que es una partición ocupada
-            position: absolute; // Se superponga
-            height: 100%;  
-            width: 100%;
-        }
-    }
-
-    .ocupada { // Clase para las particiones ocupadas por procesos
-        .tam-interno {
+        
+        .tam-interno{
             position: absolute;
             right: 0.3rem;
             top: 0.2rem;
@@ -66,5 +56,13 @@
         .nombre-proceso { // Nombre del proceso dentro de la partición
             font-weight: 700;
         }
-    }
+
+        // Ajuste para el Drag and Drop
+        .particion {
+            border:2px solid red; // Borde rojo para indicar que es una partición ocupada
+            position: absolute; // Se superponga
+            height: 100%;  
+            width: 100%;
+        }
+    }   
 }
